@@ -11,8 +11,10 @@ export const App = () => {
   return (
     <div
       style={{
-        height: '100vh',
         display: 'flex',
+        flexDirection: 'column',
+        marginTop: 20,
+        marginBottom: 20,
         justifyContent: 'center',
         alignItems: 'center',
         fontSize: 40,
