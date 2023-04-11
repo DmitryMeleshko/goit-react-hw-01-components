@@ -17,8 +17,30 @@ export const FriendList = ({ friends }) => {
   );
 };
 
+export default function FriendListItem({avatar, name, isOnline}) {
+  return (
+    <li className={name}>
+      <span className={name}
+      style={{
+        backgroundColor: isOnline ? 'green' : 'red',
+      }} ></span>
+      <img className={avatar} src={avatar} alt="User avatar" width="48"/>
+      <p className={name}>{name}</p>
+    </li>
+  );
+}
+
 FriendList.propTypes = {
-  avatar: PropTypes.string,
-  name: PropTypes.string,
-  isOnline: PropTypes.bool,
+  friends: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.number.isRequired,
+    })
+  ),
+};
+
+// eslint-disable-next-line no-undef
+FriendListItem.propTypes = {
+  avatar: PropTypes.string.isRequired,
+  name: PropTypes.string.isRequired,
+  isOnline: PropTypes.bool.isRequired
 };
